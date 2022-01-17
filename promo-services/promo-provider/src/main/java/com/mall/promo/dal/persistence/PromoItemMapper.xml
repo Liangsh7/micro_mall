@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mall.promo.dal.persistence.PromoItemMapper">
+  <resultMap id="BaseResultMap" type="com.mall.promo.dal.entitys.PromoItem">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="ps_id" jdbcType="BIGINT" property="psId" />
+    <result column="item_id" jdbcType="BIGINT" property="itemId" />
+    <result column="seckill_price" jdbcType="DECIMAL" property="seckillPrice" />
+    <result column="item_stock" jdbcType="BIGINT" property="itemStock" />
+
+  </resultMap>
+    <update id="decreaseStock">
+      UPDATE tb_promo_item
+      SET item_stock = item_stock - 1
+      WHERE
+      ps_id = #{psId}
+      AND
+      item_id = #{productId}
+      AND
+      item_stock > 0
+    </update>
+
+</mapper>

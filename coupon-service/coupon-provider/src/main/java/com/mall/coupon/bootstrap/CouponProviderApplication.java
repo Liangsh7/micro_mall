@@ -1,0 +1,17 @@
+package com.mall.coupon.bootstrap;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
+import tk.mybatis.spring.annotation.MapperScan;
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.mall.coupon")
+@MapperScan("com.mall.coupon.dal.persistence")
+public class CouponProviderApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(CouponProviderApplication.class, args);
+	}
+
+}

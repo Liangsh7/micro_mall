@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: prod
+mybatis:
+  mapper-locations: classpath*:com/mall/order/dal/persistence/*Mapper.xml"
+  type-aliases-package: com.mall.order.dal.entitys
+#  新增rocketMQ配置
+mq:
+  nameserver:
+    addr: 127.0.0.1:9876
+  topicname: order
+
